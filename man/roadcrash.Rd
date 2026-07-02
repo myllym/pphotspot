@@ -31,8 +31,7 @@ Mrkvička et al. (2023) worked with the database of road crashes
 reported to the Police in the Czech Republic from 1 January 2016 to 31
 December 2020. The data available here is a subpattern of this full data set,
 included here with the permission of the Police in the Czech Republic.
-The full data is published as open data, see
-\url{https://policyvisuals.eu/traffic-accidents-data-in-the-czech-republic/}.
+The full data is published as open data.
 The subpattern 7700 crashes lying on a linear network with 269
 vertices and 354 lines. Further average traffic volume (number of vehicles
 per 24 hours), forest density and building density in the cell are available

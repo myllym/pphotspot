@@ -5,7 +5,7 @@ Title: Hotspot Detection on a Linear Network
 Encoding: UTF-8
 Authors@R: c(
     person(given = 'Mari', family = 'Myllymäki', role = c('aut', 'cre'),
-    email = 'mari.myllymaki@luke.fi'),
+    email = 'mari.myllymaki@luke.fi', comment = c(ORCID = "0000-0002-2713-7088")),
     person(given = 'Michal', family = 'Konopa', role = 'aut',
     email = 'MKonopa@seznam.cz'),
     person(given = 'Tomáš', family = 'Mrkvička', role = 'aut',

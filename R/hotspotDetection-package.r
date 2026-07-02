@@ -1,7 +1,7 @@
 #' Hotspot detection
 #'
 #' The \pkg{pphotspot} package provides implementation of the detection
-#' of hotspots on a linear network as proposed by Mrkvička et al. (2023).
+#' of hotspots on a linear network as proposed by Mrkvička et al. (2025).
 #'
 #'
 #' @section Key functions in \pkg{GET}:

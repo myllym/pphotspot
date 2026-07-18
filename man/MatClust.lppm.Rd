@@ -41,6 +41,24 @@ evaluating the K-function for any alpha and R values.}
 \item{ncores}{Number of cores used for computations. Default to 1.
 If NULL, all available cores are used.}
 }
+\value{
+A list of
+\itemize{
+  \item EIP = the predicted point process intensity using the firstordermodel
+  \item alpha = the estimated value of the parameter alpha of the Matern cluster process, see \code{\link{rMatClustlpp}}
+  \item R = the estimated value of the parameter R of the Matern cluster process, see \code{\link{rMatClustlpp}}
+  \item Contrast = the minimum value of the contrast for the estimated alpha and R;
+  contrast is sqrt(sum((estK - meanK)^2)) where estK is the K-function estimated from the data pattern
+  and meanK is the mean estimated K function from nsim simulations from the Matern cluster process with
+  the estimated alpha and R
+  \item firstordermodel = the model fitted for the intensity using the full
+  pattern \code{PPfull} (provided to the \code{MatClust.lppm} function in the
+  argument \code{PP})
+  \item secondorder = estK, i.e. the K-function estimated from the data pattern
+  \item MCsecondorder = meanK, i.e. the mean estimated K function from nsim simulations from the Matern cluster process with
+  the estimated alpha and R
+}
+}
 \description{
 Fit a Matern cluster point process to a point pattern dataset on a linear network.
 This function is provided in \pkg{GET} to support

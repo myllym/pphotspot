@@ -24,6 +24,15 @@ is used. Typically this is feasible (not too time consuming).}
 Default is computed as \eqn{\sqrt{A}/10}{sqrt(A)/10} where \eqn{A}{A} is the
 area of the window of observation of \code{X}.}
 }
+\value{
+A list of three components:
+\itemize{
+  \item EIP = the predicted point process intensity
+  \item firstordermodel = the model fitted for the intensity
+  \item secondorder = the inhomogeneous K-function estimated from the given
+point pattern \code{PP} using the estimated intensity
+}
+}
 \description{
 Fit a Poisson point process model to a point pattern dataset on a linear network.
 This function is provided in \pkg{GET} to support \code{\link{hotspots.poislpp}} and

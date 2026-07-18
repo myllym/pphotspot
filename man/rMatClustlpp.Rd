@@ -18,10 +18,34 @@ rMatClustlpp(Centers, R, alpha, LL, check_vol = FALSE)
 \item{check_vol}{Logical. TRUE for checking if the ball producing the cluster
 has any intersection with linear network.}
 }
+\value{
+A point pattern on linear network, \code{lpp} object of spatstat.
+}
 \description{
 Simulating the Matern clusters with parameters alpha and R given the (x,y)-
 coordinates of the parent points.
 This function is provided in \pkg{GET} to support
 \code{\link{hotspots.MatClustlpp}}. See the hotspots vignette available
 by starting R, typing \code{library("GET")} and \code{vignette("GET")}.
+}
+\examples{
+# example code
+if(require(spatstat.geom, quietly=TRUE) & require(spatstat.linnet, quietly=TRUE)) {
+data("roadcrash")
+win <- owin(xrange = roadcrash$xrange,
+            yrange = roadcrash$yrange)
+X <- ppp(x = roadcrash$x, y = roadcrash$y, window = win)
+Vertices.pp <- ppp(x = roadcrash$Vertices.x,
+                   y = roadcrash$Vertices.y,
+                   window=win)
+L <- linnet(vertices=Vertices.pp,
+            edges = roadcrash$Edges)
+PPfull <- lpp(X, L)
+subwin <- owin(c(-760000, -740000), c(-1160000, -1140000))
+PPsub <- PPfull[, subwin]
+Centers <- rpoislpp(0.0005, L=PPsub[['domain']])
+XX <- rMatClustlpp(Centers, 500, 5, PPsub[['domain']])
+plot(Centers, col=1, pch=16)
+points(XX, col=2)
+}
 }

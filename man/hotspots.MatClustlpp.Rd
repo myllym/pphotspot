@@ -40,6 +40,10 @@ If NULL, all available cores are used.}
 
 \item{...}{Additional parameters to be passed to \code{\link[GET]{fdr_envelope}}.}
 }
+\value{
+An object of type \code{fdr_envelope} and \code{global_envelope},
+see further details in \code{\link[GET]{global_envelope_test}}.
+}
 \description{
 See the hotspots vignette available by starting R, typing
 \code{library("GET")} and \code{vignette("GET")}.

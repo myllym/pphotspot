@@ -16,6 +16,7 @@
 #' @importFrom spatstat.geom psp Window lengths_psp disc volume
 #' @importFrom spatstat.random rpoisppOnLines
 #' @importFrom spatstat.linnet lpp
+#' @return A point pattern on linear network, \code{lpp} object of spatstat.
 #' @export
 rMatClustlpp <- function(Centers, R, alpha, LL, check_vol=FALSE) {
   e <- as.matrix(LL$lines$ends)

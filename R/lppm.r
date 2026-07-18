@@ -36,6 +36,13 @@
 #' @importFrom spatstat.linnet lppm
 #' @importFrom spatstat.geom area
 #' @importFrom spatstat.Knet Knetinhom
+#' @return A list of three components:
+#' \itemize{
+#'   \item EIP = the predicted point process intensity
+#'   \item firstordermodel = the model fitted for the intensity
+#'   \item secondorder = the inhomogeneous K-function estimated from the given
+#' point pattern \code{PP} using the estimated intensity
+#' }
 #' @export
 pois.lppm <- function(PP, formula, data, subwin = NULL, r_max = NULL) {
   PPsub <- PP[, subwin] # Works also for NULL, then PPsub equals PP
@@ -101,6 +108,22 @@ pois.lppm <- function(PP, formula, data, subwin = NULL, r_max = NULL) {
 #' @importFrom spatstat.Knet Knetinhom
 #' @importFrom spatstat.geom area
 #' @importFrom GET create_curve_set fdr_envelope
+#' @return A list of
+#' \itemize{
+#'   \item EIP = the predicted point process intensity using the firstordermodel
+#'   \item alpha = the estimated value of the parameter alpha of the Matern cluster process, see \code{\link{rMatClustlpp}}
+#'   \item R = the estimated value of the parameter R of the Matern cluster process, see \code{\link{rMatClustlpp}}
+#'   \item Contrast = the minimum value of the contrast for the estimated alpha and R;
+#'   contrast is sqrt(sum((estK - meanK)^2)) where estK is the K-function estimated from the data pattern
+#'   and meanK is the mean estimated K function from nsim simulations from the Matern cluster process with
+#'   the estimated alpha and R
+#'   \item firstordermodel = the model fitted for the intensity using the full
+#'   pattern \code{PPfull} (provided to the \code{MatClust.lppm} function in the
+#'   argument \code{PP})
+#'   \item secondorder = estK, i.e. the K-function estimated from the data pattern
+#'   \item MCsecondorder = meanK, i.e. the mean estimated K function from nsim simulations from the Matern cluster process with
+#'   the estimated alpha and R
+#' }
 #' @export
 MatClust.lppm <- function(PP, formula, subwin = NULL, valpha, vR, data,
                           nsim = 10, ncores = 1L) {

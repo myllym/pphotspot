@@ -1,6 +1,6 @@
 Package: pphotspot
-Version: 0.1
-Date: 2026-07-02
+Version: 0.1-2
+Date: 2026-07-18
 Title: Hotspot Detection of Point Events on a Linear Network
 Encoding: UTF-8
 Authors@R: c(
